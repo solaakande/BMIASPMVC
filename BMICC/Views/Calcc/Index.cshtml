@@ -1,0 +1,43 @@
+﻿@model BMICC.Models.calc
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <h2>BMI Calculator</h2>
+    <p id="info">Please input your Weight(kg) and Height(cm) in the matching fields</p>
+
+    <div class="row">
+        @using (Html.BeginForm("/Index", "Calcc", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="weight">Weight (In Kg)</label>
+                <input type="text" class="form-control" id="weight" name="weight" placeholder="weight in kg" value="@Model.weight" />
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (In Centimetres)</label>
+                <input type="text" class="form-control" id="height" name="height" placeholder="Height in cm" value="@Model.height" />
+            </div>
+
+            <div class="form-group">
+                <label for="bmi">BMI</label>
+                <input type="text" class="form-control" id="result" name="result" value="@Model.result" />
+            </div>
+
+            <div class="form-group">
+                <label for="implication">Implication</label>
+                <input type="text" class="form-control" id="implication" name="implication" value="@Model.implication" />
+            </div>
+
+            <button type="submit" class="btn btn-danger" id="calculate" value="divv" name="calculate">Calculate</button>
+        }
+    </div>
+</body>
+</html>
